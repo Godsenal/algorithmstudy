@@ -24,6 +24,9 @@ int main()
   while (t--)
   {
     cin >> s;
+    // 커서를 기준으로 left, right 스택을 나눠서 품.
+    // '<' 일때는 커서 바로 앞에 있는 수 (left.top)을 right로
+    // '>' 일때는 반대
     for (char c : s)
     {
       if (c == '<')
@@ -54,6 +57,7 @@ int main()
         left.push(c);
       }
     }
+    // 출력시에 stack이기 때문에 거꾸로 출력해줘야함. left에 몰아넣고 거꾸로 출력.
     while (!right.empty())
     {
       left.push(right.top());
